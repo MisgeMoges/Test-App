@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/create-payment-intent', async (req, res) => {
-  const { amount, currency = 'usd' } = req.body;
+  const { amount, currency } = req.body;
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
