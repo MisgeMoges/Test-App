@@ -6,8 +6,8 @@ require('dotenv').config();
 // Replace with your actual Stripe secret key
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const admin = require('firebase-admin');
-const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT;
-// const serviceAccount = require('./servicesAccount.json')
+// const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT;
+const serviceAccount = require('./servicesAccount.json')
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
